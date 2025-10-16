@@ -1,0 +1,59 @@
+{
+  "width": 4,
+  "height": 3,
+  "building_types": [
+    {
+      "name": "residential",
+      "base_score": 3,
+      "preferred_neighbors": {
+        "park": 2,
+        "market": 1
+      },
+      "avoid_neighbors": {
+        "factory": -3
+      }
+    },
+    {
+      "name": "park",
+      "base_score": 2,
+      "preferred_neighbors": {
+        "residential": 1,
+        "market": 1
+      },
+      "avoid_neighbors": {
+        "factory": -2
+      }
+    },
+    {
+      "name": "market",
+      "base_score": 4,
+      "preferred_neighbors": {
+        "residential": 2,
+        "park": 1
+      },
+      "avoid_neighbors": {}
+    },
+    {
+      "name": "factory",
+      "base_score": 5,
+      "preferred_neighbors": {
+        "factory": 1
+      },
+      "avoid_neighbors": {
+        "residential": -4,
+        "park": -3
+      }
+    }
+  ],
+  "initial_grid": [
+    ["residential", "empty", "empty", "market"],
+    ["empty", "empty", "empty", "empty"],
+    ["park", "empty", "factory", "empty"]
+  ],
+  "locked_cells": [
+    [0, 0],
+    [0, 3],
+    [2, 0],
+    [2, 2]
+  ]
+}
